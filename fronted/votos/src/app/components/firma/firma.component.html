@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form (ngSubmit)="onSave()" #registroForm="ngForm" class="needs-validation" novalidate>
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="FirmObj.nombre" name="nombre" placeholder="Nombre" required>
+            <div class="invalid-feedback">
+              El nombre es requerido.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" class="form-control" id="apellido" [(ngModel)]="FirmObj.apellido" name="apellido" placeholder="Apellido" required>
+            <div class="invalid-feedback">
+              El apellido es requerido.
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Voto:</label><br>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" id="votoAFavor" [(ngModel)]="FirmObj.voto" name="voto" value="true" required>
+              <label class="form-check-label" for="votoAFavor">A favor</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" id="votoEnContra" [(ngModel)]="FirmObj.voto" name="voto" value="false" required>
+              <label class="form-check-label" for="votoEnContra">En contra</label>
+            </div>
+            <div class="invalid-feedback">
+              Seleccione una opción para el voto.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="voto_relacionado">ID del Evento:</label>
+            <input type="text" class="form-control" id="voto_relacionado" [(ngModel)]="FirmObj.voto_relacionado" name="voto_relacionado" placeholder="ID del Evento" required>
+            <div class="invalid-feedback">
+              El ID del evento es requerido.
+            </div>
+          </div>
+          <button type="submit" class="btn-primary" [disabled]="!registroForm.valid">Registrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Evento</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (voto of votosList; track $index) {
+      <tr>
+        <td>{{ voto.id }}</td>
+        <td>{{ voto.evento }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>

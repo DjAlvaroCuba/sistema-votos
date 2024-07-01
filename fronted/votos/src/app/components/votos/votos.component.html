@@ -1,0 +1,50 @@
+
+
+    <h1 class="text-primary">Eventos de votos</h1> 
+    <div class="text-center">
+        <a href="/nuevo-voto" class="btn btn-success btn-table">
+            <i class="fas fa-thumbs-up"></i> REGISTRAR EVENTO
+        </a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Evento</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Organización</th>
+                    <th>Encargado</th>
+                    <th>Firmas</th>
+                    <th>Fecha de Finalización</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (voto of votosList; track $index) {
+                    <tr>
+                        <td>{{ voto.id }}</td>
+                        <td>{{ voto.evento }}</td>
+                        <td>{{ voto.nombre }}</td>
+                        <td>{{ voto.descripcion }}</td>
+                        <td>{{ voto.organizacion }}</td>
+                        <td>{{ voto.encargado }}</td>
+                        <td>{{ voto.firmas }}</td>
+                        <td>{{ voto.fecha_finalizacion }}</td>
+                        <td>
+                          
+                            <a href="/firma" class="btn btn-success btn-table">
+                                <i class="fas fa-thumbs-up"></i> VOTAR
+                            </a> 
+                            <a href="/votos" class="btn btn-successe btn-table">
+                                <i class="fas fa-thumbs-up"></i> ESTADO
+                            </a>
+                         
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+

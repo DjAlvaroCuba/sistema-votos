@@ -1,0 +1,22 @@
+<h1 class="text-primary">RESULTADOS</h1>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>EVENTO</th>
+                <th>VOTOS A FAVOR</th>
+                <th>VOTOS EN CONTRA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let voto of votosList; let i = index;">
+                <td>{{ voto.id }}</td>
+                <td>{{ voto.evento }}</td>
+                <td>{{ conteoList[i]?.votos_favor || 'AUN NO HAY VOTOS' }}</td>
+                <td>{{ conteoList[i]?.votos_contra || 'AUN NO HAY VOTOS' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

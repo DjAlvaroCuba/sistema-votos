@@ -1,0 +1,36 @@
+body {
+    padding: 20px;
+    background-color: #f8f9fa; /* Fondo claro */
+}
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #343a40; /* Un color oscuro para el texto */
+    font-weight: bold;
+}
+table {
+    width: 100%;
+    margin-bottom: 20px; /* Espacio inferior */
+}
+.btn-table {
+    margin-right: 5px; /* Espacio entre los botones */
+}
+.btn-success {
+    background-color: #28a745; /* Verde para voto a favor */
+    border-color: #28a745;
+}
+.btn-successe {
+    background-color: #2d54ec; /* Verde para voto a favor */
+    border-color: #2e55d2;
+    color: white;
+}
+.btn-danger {
+    background-color: #dc3545; /* Rojo para voto en contra */
+    border-color: #dc3545;
+}
+.btn-success:hover, .btn-danger:hover {
+    opacity: 0.9; /* Efecto de hover */
+}
+.btn {
+    border-radius: 20px; /* Bordes redondeados */
+}
